@@ -1,0 +1,20 @@
+﻿@model IEnumerable<SisAuxSUS_AP2.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Seja bem vindo</h2>
+<p>
+    <div class="form-group">
+        @Html.ActionLink("Cadastrar", "Create", "Usuarios", null, new { @class = "btn btn-outline-success" })
+        @Html.ActionLink("Atendimento", "Index", "Pacientes", null, new { @class = "btn btn-outline-success" })
+    </div>
+</p>
+<p>
+    <h3>
+        O que é covid-19?
+    </h3>
+    Covid-19 é uma doença respiratória infecciosa causada por um coronavírus descoberto em 2019 chamado Sars-CoV-2. O nome da doença foi formado por um grupo de letras: 'co' de corona, 'vi' de vírus e 'd' de doença.
+</p>
+    <img width="1300" src="https://www.thecmeaglet.com/wp-content/uploads/2020/05/coronavirus.gif">

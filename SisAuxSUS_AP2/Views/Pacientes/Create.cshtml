@@ -1,0 +1,48 @@
+﻿@model SisAuxSUS_AP2.Models.Paciente
+@using SisAuxSUS_AP2.Models.Enumeradores 
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Informe os dados do paciente</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeDoPaciente" class="control-label"></label>
+                <input asp-for="NomeDoPaciente" class="form-control" />
+                <span asp-validation-for="NomeDoPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdadeDoPaciente" class="control-label"></label>
+                <input asp-for="IdadeDoPaciente" class="form-control" />
+                <span asp-validation-for="IdadeDoPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CidadeDoPaciente" class="control-label"></label>
+                <input asp-for="CidadeDoPaciente" class="form-control" />
+                <span asp-validation-for="CidadeDoPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoDeSintoma" class="control-label"></label>
+                <select asp-for="TipoDeSintoma" asp-items="Html.GetEnumSelectList<TipoDeSintomas>()" class="form-control">Escolha os sintomas</select>
+                <span asp-validation-for="TipoDeSintoma" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Analisar" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" >Voltar ao Inicio</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
