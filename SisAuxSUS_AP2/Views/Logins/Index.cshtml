@@ -6,7 +6,6 @@
 
 <h1>Login</h1>
 <hr />
-
 <form asp-action="Index" asp-anti-forgery="true" method="post">
     <div class="row">
         <div class="col-md-4">
@@ -25,7 +24,7 @@
     </div>
     <br>
     <div class="form-group">
-        <input type="submit" class="btn btn-sm btn-outline-success" value="Entrar" />
+        <input asp-action="Dados" asp-controller="Pacientes" type="submit" class="btn btn-sm btn-outline-success" value="Entrar" />
     </div>
     <br>
     <div>

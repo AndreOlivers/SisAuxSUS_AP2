@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SisAuxSUS_AP2.Context;
 using SisAuxSUS_AP2.Models;
+using SisAuxSUS_AP2.Models.Enumeradores;
+using SisAuxSUS_AP2.Models.ViewModel;
 
 namespace SisAuxSUS_AP2.Controllers
 {
@@ -22,7 +24,12 @@ namespace SisAuxSUS_AP2.Controllers
         // GET: Pacientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pacientes.ToListAsync());
+            var pacienteViewModel = new PacientesViewModel
+            {
+                Pacientes = await _context.Pacientes.ToListAsync(),
+                //Percentual = MethodoParaCalcularPercentualExemplo()
+            };
+            return View(pacienteViewModel);
         }
 
         // GET: Pacientes/Details/5
@@ -56,7 +63,7 @@ namespace SisAuxSUS_AP2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,NomeDoPaciente,IdadeDoPaciente,CidadeDoPaciente,SituacaoPaciente,TipoDeSintoma")] Paciente paciente)
         {
-        
+
             if (ModelState.IsValid)
             {
                 _context.Add(paciente);
@@ -150,5 +157,18 @@ namespace SisAuxSUS_AP2.Controllers
         {
             return _context.Pacientes.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> Dados()
+        {
+            return View(await _context.Pacientes.ToListAsync());
+        }
+
+        //public Task<IActionResult> PorcetagemDeInfectados(decimal valor , decimal total)
+        //{
+        //    var sintomas = _context.Pacientes.Where(x => x.TipoDeSintoma == TipoDeSintomas);
+
+         
+        //    return View();
+        //}
     }
 }

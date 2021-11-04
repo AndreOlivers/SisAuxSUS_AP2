@@ -149,5 +149,10 @@ namespace SisAuxSUS_AP2.Controllers
         {
             return _context.Usuarios.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> Dados()
+        {
+            return View(await _context.Usuarios.ToListAsync());
+        }
     }
 }

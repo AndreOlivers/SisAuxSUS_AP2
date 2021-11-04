@@ -10,11 +10,11 @@ namespace SisAuxSUS_AP2.Models.Enumeradores
     {
         [Display(Name = "Temperatura normal , apenas dor de cabeça.")]
         Sintomas1,
-        [Display(Name = "Febre, Tosse , Cansaço ,Perda de paladar ou olfato")]
+        [Display(Name = "Febre, Tosse , Cansaço ,Perda de paladar ou olfato.")]
         Sintomas2,
-        [Display(Name = "Tosse seca , febre alta e Falta de ar")]
+        [Display(Name = "Tosse seca , febre alta e Falta de ar.")]
         Sintomas3,
-        [Display(Name = "Dificuldade de respirar , Perda da fala ,Febre Alta , Dores no peito")]
+        [Display(Name = "Dificuldade de respirar , Perda da fala ,Febre Alta , Dores no peito.")]
         Sintomas4
 
     }

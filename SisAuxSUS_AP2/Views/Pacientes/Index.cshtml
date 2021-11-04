@@ -1,70 +1,55 @@
-﻿@model IEnumerable<SisAuxSUS_AP2.Models.Paciente>
+﻿@model SisAuxSUS_AP2.Models.ViewModel.PacientesViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Bem vindo, Usuário</h1>
-
+<h2>Dados Paciente</h2>
 <p>
-    <div class="form-group">
-        @Html.ActionLink("Pré-Atendimento", "Create", "Pacientes", null, new { @class = "btn btn-outline-success" })
-    </div>
+    <a asp-action="Criar" class="btn btn-default"> Criar Novo </a>
 </p>
-<!--foreach (var item in Model)
-{-->
-                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
-<!--}-->
-<body>
-    <div>
-        <img src="~/css/Imagens/vacinação1.jpg" width="1200">
-    </div>
-    <br>
-    <form action="https://vacinometro.sms.fortaleza.ce.gov.br/">
-        <input class="btn btn-outline-success" type="submit" value="Vacinômetro" />
-    </form>
-    <p>
-        Vacinação da cidade de Fortaleza
-       </p>
-    <br>
-    <div>
-        <p>
-            <h4> VACINAS SÃO SEGURAS E EFICAZES </h4>
-            As vacinas são feitas com microrganismos da própria doença que previne. Por exemplo: a vacina contra o sarampo contém o vírus do sarampo. No entanto, estes microrganismos estão enfraquecidos ou mortos, fazendo com que o corpo não desenvolva a doença, mas se torne preparado para combatê-la se for necessário.
-            Toda vacina licenciada para uso passou antes por diversas fases de avaliação, garantindo sua segurança. Elas também passam pela avaliação de institutos reguladores rígidos. No Brasil, essa função cabe à Agência Nacional de Vigilância Sanitária (Anvisa). Algumas pessoas podem ter efeitos colaterais leves depois de tomarem
-            uma vacina, como dor no local da injeção e febre baixa.
-        </p>
-        <br>
-        <h4>
-            VACINAS CERTAS PARA CADA FASE
-        </h4>
-        <p>
-            Além de levar os filhos para serem vacinados, é fundamental ficar atento para quais você deve tomar. O Ministério da Saúde tem um calendário de vacinação específico para recém-nascidos e crianças, bem como para pré-adolescentes e adolescentes, adultos, idosos; e ainda para gestantes. Peça mais informações para seu médico.
-        </p>
-
-        <div>
-            <p>
-                <b>REFERÊNCIAS</b>
-            </p>
-        </div>
-
-        <a href="http://www.cdc.gov/vaccines/vac-gen/whatifstop.htm">
-            - acessado em 17/06/2019
-        </a>
-
-        <a href="http://www.cdc.gov/vaccines/vac-gen/why.htm">
-            - acessado em 17/06/2019
-        </a>
-
-        <a href=" https://familia.sbim.org.br/vacinas/perguntas-e-respostas/como-posso-ter-certeza-de-que-as-vacinas-sao-seguras">
-            - acessado em 17/06/2019
-        </a>
-
-        <a href="http://www.who.int/bulletin/volumes/86/2/07-040089/en/ ">
-            - acessado em 17/06/2019
-        </a>
-    </div>
-</body>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                Nome
+            </th>
+            <th>
+                Idade
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Tipos de sintomas
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pacientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeDoPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdadeDoPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CidadeDoPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoDeSintoma)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-success">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-success">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
