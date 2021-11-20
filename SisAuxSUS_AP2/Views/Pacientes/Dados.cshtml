@@ -4,27 +4,51 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Bem vindo, Usuário</h1>
+<head>
+    <link rel="stylesheet" href="~/css/Login/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
 
-<p>
+<header>
+    <div>
+        <nav class="navbar navbar-expand-xl navbar-light bg-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/css/imagens/covid_icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    SisSus
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav nav-fill w-75">
+                        <a class="nav-link active" aria-current="page" href="/Usuarios/Dados">Pagina Inicial</a>
+                        <a class="nav-link" href="/Pacientes/Create">Analisar Paciente</a>
+                        <a class="nav-link" href="/Pacientes/ListaPacientes">Lista dos Pacientes</a>
+                        <a class="nav-link" href="https://vacinometro.sms.fortaleza.ce.gov.br/">Vacinômetro</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<h1>Bem vindo, ao Sistema SisSus</h1>
+
+@*<p>
     <div class="form-group">
         @Html.ActionLink("Pré-Atendimento", "Create", "Pacientes", null, new { @class = "btn btn-outline-success" })
     </div>
-</p>
+</p>*@
 
 <body>
     <div>
         <img src="~/css/Imagens/vacinação1.jpg" width="1200">
     </div>
     <br>
-    <form action="https://vacinometro.sms.fortaleza.ce.gov.br/">
+    @*<form action="https://vacinometro.sms.fortaleza.ce.gov.br/">
         <input class="btn btn-outline-success" type="submit" value="Vacinômetro" />
-    </form>
-    <p>
-        Vacinação da cidade de Fortaleza
-    </p>
-    <br>
-    <div>
+    </form>*@
+     <div>
         <p>
             <h4> VACINAS SÃO SEGURAS E EFICAZES </h4>
             As vacinas são feitas com microrganismos da própria doença que previne. Por exemplo: a vacina contra o sarampo contém o vírus do sarampo. No entanto, estes microrganismos estão enfraquecidos ou mortos, fazendo com que o corpo não desenvolva a doença, mas se torne preparado para combatê-la se for necessário.
@@ -39,26 +63,5 @@
             Além de levar os filhos para serem vacinados, é fundamental ficar atento para quais você deve tomar. O Ministério da Saúde tem um calendário de vacinação específico para recém-nascidos e crianças, bem como para pré-adolescentes e adolescentes, adultos, idosos; e ainda para gestantes. Peça mais informações para seu médico.
         </p>
 
-        <div>
-            <p>
-                <b>REFERÊNCIAS</b>
-            </p>
-        </div>
-
-        <a href="http://www.cdc.gov/vaccines/vac-gen/whatifstop.htm">
-            - acessado em 17/06/2019
-        </a>
-
-        <a href="http://www.cdc.gov/vaccines/vac-gen/why.htm">
-            - acessado em 17/06/2019
-        </a>
-
-        <a href=" https://familia.sbim.org.br/vacinas/perguntas-e-respostas/como-posso-ter-certeza-de-que-as-vacinas-sao-seguras">
-            - acessado em 17/06/2019
-        </a>
-
-        <a href="http://www.who.int/bulletin/volumes/86/2/07-040089/en/ ">
-            - acessado em 17/06/2019
-        </a>
     </div>
 </body>

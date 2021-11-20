@@ -1,48 +1,90 @@
 ﻿@model SisAuxSUS_AP2.Models.Paciente
-@using SisAuxSUS_AP2.Models.Enumeradores 
+@using SisAuxSUS_AP2.Models.Enumeradores
 @{
     ViewData["Title"] = "Create";
 }
 
-<h3>Informe os dados do paciente</h3>
+<head>
+    <link rel="stylesheet" href="~/css/Login/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+ </head>
+<header>
+    <div>
+        <nav class="navbar navbar-expand-xl navbar-light bg-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/css/imagens/covid_icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    SisSus
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav nav-fill w-75">
+                        <a class="nav-link active" aria-current="page" href="/Usuarios/Dados">Pagina Inicial</a>
+                        <a class="nav-link" href="/Pacientes/Create">Analisar Paciente</a>
+                        <a class="nav-link" href="/Pacientes/ListaPacientes">Lista dos Pacientes</a>
+                        <a class="nav-link" href="https://vacinometro.sms.fortaleza.ce.gov.br/">Vacinômetro</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NomeDoPaciente" class="control-label"></label>
-                <input asp-for="NomeDoPaciente" class="form-control" />
-                <span asp-validation-for="NomeDoPaciente" class="text-danger"></span>
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <h4><b>Informe os dados do paciente</b></h4>
+                    <img src="~/css/Imagens/coronavirus.lightbox.png" class="brand_logo" alt="Logo" width="200">
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IdadeDoPaciente" class="control-label"></label>
-                <input asp-for="IdadeDoPaciente" class="form-control" />
-                <span asp-validation-for="IdadeDoPaciente" class="text-danger"></span>
+            <hr />
+            <div class="d-flex justify-content-center form_container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-lg-12" >
+                        <form asp-action="Create">
+                                @*<div class="input-group-append">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                </div>*@
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div >
+                                    <div class="form-group">
+                                        <label asp-for="NomeDoPaciente" class="control-label"></label>
+                                        <input asp-for="NomeDoPaciente" class="form-control" />
+                                        <span asp-validation-for="NomeDoPaciente" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="IdadeDoPaciente" class="control-label"></label>
+                                    <input asp-for="IdadeDoPaciente" class="form-control" />
+                                    <span asp-validation-for="IdadeDoPaciente" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CidadeDoPaciente" class="control-label"></label>
+                                    <input asp-for="CidadeDoPaciente" class="form-control" />
+                                    <span asp-validation-for="CidadeDoPaciente" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="TipoDeSintoma" class="control-label"></label>
+                                    <select asp-for="TipoDeSintoma" asp-items="Html.GetEnumSelectList<TipoDeSintomas>()" class="form-control">Escolha os sintomas</select>
+                                    <span asp-validation-for="TipoDeSintoma" class="text-danger"></span>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="submit" value="Analisar" class="btn btn-outline-success" />
+                                </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="CidadeDoPaciente" class="control-label"></label>
-                <input asp-for="CidadeDoPaciente" class="form-control" />
-                <span asp-validation-for="CidadeDoPaciente" class="text-danger"></span>
+         
+            <div>
+                <a asp-action="Dados">Voltar ao Inicio</a>
             </div>
-            <div class="form-group">
-                <label asp-for="TipoDeSintoma" class="control-label"></label>
-                <select asp-for="TipoDeSintoma" asp-items="Html.GetEnumSelectList<TipoDeSintomas>()" class="form-control">Escolha os sintomas</select>
-                <span asp-validation-for="TipoDeSintoma" class="text-danger"></span>
-            </div>
-            <br>
-            <div class="form-group">
-                <input type="submit" value="Analisar" class="btn btn-outline-success" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Dados" >Voltar ao Inicio</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

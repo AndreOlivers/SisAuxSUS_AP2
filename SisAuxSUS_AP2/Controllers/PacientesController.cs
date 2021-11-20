@@ -22,16 +22,25 @@ namespace SisAuxSUS_AP2.Controllers
         }
 
         // GET: Pacientes
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var pacienteViewModel = new PacientesViewModel
             {
-                Pacientes = await _context.Pacientes.ToListAsync(),
-                //Percentual = MethodoParaCalcularPercentualExemplo()
+                Pacientes = await _context.Pacientes.ToListAsync()
             };
-            return View(pacienteViewModel);
+            //return View(pacienteViewModel);
+            //return RedirectToAction(nameof(pacienteViewModel));
+            return View(await _context.Pacientes.ToListAsync());
         }
-
+        public async Task<IActionResult> ListaPacientes(PacientesViewModel paciente)
+        {
+            paciente = new PacientesViewModel
+            {
+                Pacientes = await _context.Pacientes.ToListAsync()
+            };
+            return View("ListaPacientes", paciente);
+        }
         // GET: Pacientes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -68,9 +77,10 @@ namespace SisAuxSUS_AP2.Controllers
             {
                 _context.Add(paciente);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Alerta", new { id = paciente.Id });
             }
-            return View(paciente);
+            return View(await _context.Pacientes.ToListAsync());
+            //return RedirectToAction(nameof(Index));
         }
 
         // GET: Pacientes/Edit/5
@@ -119,7 +129,8 @@ namespace SisAuxSUS_AP2.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Alerta", new { id = paciente.Id });
+                //return RedirectToAction(nameof(Index));
             }
             return View(paciente);
         }
@@ -163,12 +174,8 @@ namespace SisAuxSUS_AP2.Controllers
             return View(await _context.Pacientes.ToListAsync());
         }
 
-        //public Task<IActionResult> PorcetagemDeInfectados(decimal valor , decimal total)
-        //{
-        //    var sintomas = _context.Pacientes.Where(x => x.TipoDeSintoma == TipoDeSintomas);
-
-         
-        //    return View();
-        //}
+        public async Task<IActionResult> Alerta(int id) 
+            => View(await _context.Pacientes.FirstOrDefaultAsync(x => x.Id == id));
+           
     }
 }
