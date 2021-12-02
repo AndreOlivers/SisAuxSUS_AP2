@@ -1,6 +1,4 @@
-﻿@*@model System.Collections.Generic.List<SisAuxSUS_AP2.Models.Paciente>*@
-@*@model SisAuxSUS_AP2.Models.ViewModel.PacientesViewModel*@
-@model SisAuxSUS_AP2.Models.Paciente
+﻿@model SisAuxSUS_AP2.Models.Paciente
 @using SisAuxSUS_AP2.Models.Enumeradores
 
 @{
@@ -33,53 +31,58 @@
     </div>
 </header>
 
-
-<h1>ALERTA!</h1>
 <div class="container">
     @if (Model.TipoDeSintoma == TipoDeSintomas.Sintomas1)
     {
-        <div class="alert alert-primary" role="alert">
-            <h4 class="alert-heading">Não está infectado!</h4>
-            <p>Beba bastante liquido, se alimente bem e use máscara</p>
-            <hr>
-            <p class="mb-0">Parece que está tudo bem com sua saúde tome todos os cuidados sanitários, lavando sempre as mãos, mantendo isolamento social.</p>
-        </div>
+    <div class="alert alert-primary" role="alert">
+        <h1>ALERTA!</h1>
+        <h4 class="alert-heading">Não está infectado!</h4>
+        <p>Beba bastante liquido, se alimente bem e use máscara</p>
+        <hr>
+        <p class="mb-0">Parece que está tudo bem com sua saúde tome todos os cuidados sanitários, lavando sempre as mãos, mantendo isolamento social.</p>
+    </div>
     }
 </div>
 <div class="container">
     @if (Model.TipoDeSintoma == TipoDeSintomas.Sintomas2)
     {
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Sintomas leves, Pode estar infectado!</h4>
-            <p>Procure uma unidade de testagem da Covid</p>
-            <hr>
-            <p class="mb-0">Parece que você pode estar infectado busque uma unidade mais proximas para fazer um teste e verificar sua saúde.</p>
-        </div>
+    <div class="alert alert-success" role="alert">
+        <h1>ALERTA!</h1>
+        <h4 class="alert-heading">Sintomas leves, Pode estar infectado!</h4>
+        <p>Procure uma unidade de testagem da Covid</p>
+        <hr>
+        <p class="mb-0">Parece que você pode estar infectado busque uma unidade mais proximas para fazer um teste e verificar sua saúde.</p>
+    </div>
     }
 </div>
 <div class="container">
     @if (Model.TipoDeSintoma == TipoDeSintomas.Sintomas3)
     {
-        <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">Sintomas médios, Infectado!</h4>
-            <p>Procure uma unidade de testagem da Covid</p>
-            <hr>
-            <p class="mb-0">Sintomas médios de covid-19, perigo procura uma unidade médica para atendimento busque na indicação do mapa no sistema.</p>
-        </div>
+    <div class="alert alert-warning" role="alert">
+        <h1>ALERTA!</h1>
+        <h4 class="alert-heading">Sintomas médios, Infectado!</h4>
+        <p>Procure uma unidade de testagem da Covid</p>
+        <hr>
+        <p class="mb-0">Sintomas médios de covid-19, perigo procura uma unidade médica para atendimento busque na indicação do mapa no sistema.</p>
+    </div>
     }
 </div>
 <div class="container">
     @if (Model.TipoDeSintoma == TipoDeSintomas.Sintomas4)
     {
-        <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading">Sintomas graves, Infectado!</h4>
-            <p>Procure uma unidade de testagem da Covid</p>
-            <hr>
-            <p class="mb-0">Sintomas graves de covid-19, perigo procura uma unidade médica para atendimento busque na indicação do mapa no sistema.</p>
-        </div>
+    <div class="alert alert-danger" role="alert">
+        <h1>ALERTA!</h1>
+        <h4 class="alert-heading">Sintomas graves, Infectado!</h4>
+        <p>Procure uma unidade de testagem da Covid</p>
+        <hr>
+        <p class="mb-0">Sintomas graves de covid-19, perigo procura uma unidade médica para atendimento busque na indicação do mapa no sistema.</p>
+    </div>
     }
 </div>
-
+<div>
+    <a asp-action="ListaPacientes" asp-controller="Pacientes" class="btn btn-outline-success">Lista de Pacientes</a>
+</div>
+<br/>
 <div>
     <a href="https://www.google.com/search?tbs=lf:1&tbm=lcl&sxsrf=AOaemvKWbXZHrmHqI7qAFc9W6ngCa9RPdQ:1637367599592&q=pontos+de+testagem+da+covid&rflfq=1&num=10&ved=2ahUKEwjJlo_R1aX0AhVPKLkGHbHXA6AQtgN6BAg9EAM#rlfi=hd:;si:;mv:[[-3.6812372899059875,-38.37097922666015],[-3.8254661088092834,-38.738334573339834],null,[-3.753354676572987,-38.55465689999999],13]">
         acesse os pontos de testagem do covid

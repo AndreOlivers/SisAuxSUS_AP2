@@ -62,7 +62,7 @@ namespace SisAuxSUS_AP2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Logins}/{action=Index}/{id?}");
+                    pattern: "{controller=Logins}/{action=EntrarSistema}/{id?}");
             });
         }
     }

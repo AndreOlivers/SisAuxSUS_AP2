@@ -25,7 +25,6 @@
                         <a class="nav-link" href="/Usuarios/Create">Cadastro</a>
                         <a class="nav-link" href="/Usuarios/Index">Lista de Usuários</a>
                         <a class="nav-link" href="/Pacientes/Dados">Pacientes</a>
-                        @*<a class="nav-link disabled">Disabled</a>*@
                     </div>
                 </div>
             </div>
@@ -37,9 +36,9 @@
     <div class="d-flex justify-content-center h-100">
         <div class="user_card">
             <div class="d-flex justify-content-center">
-                <div class="brand_logo_container">
+                <div class="brand_logo_container col text-center">
                     <h3><b>Informe os dados do Usuário</b></h3>
-                    <img src="~/css/Imagens/coronavirus.lightbox.png" class="brand_logo" alt="Logo" width="150">
+                    <img src="~/css/Imagens/coronavirus.lightbox.png" class="brand_logo align-content-center " alt="Logo" width="150">
                 </div>
             </div>
             <hr />
@@ -77,12 +76,12 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="Senha" class="control-label"></label>
-                                <input asp-for="Senha" class="form-control" />
+                                <input asp-for="Senha" type="password" class="form-control" />
                                 <span asp-validation-for="Senha" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="ConfimarSenha" class="control-label"></label>
-                                <input asp-for="ConfimarSenha" class="form-control" />
+                                <input asp-for="ConfimarSenha" type="password" class="form-control" />
                                 <span asp-validation-for="ConfimarSenha" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -91,7 +90,7 @@
                                 <span asp-validation-for="Cidade" class="text-danger"></span>
                             </div>
                             <br>
-                            <div class="form-group">
+                            <div class="form-group col text-center">
                                 <input type="submit" value="Cadastrar" class="btn btn-outline-success" />
                             </div>
                         </form>
@@ -99,8 +98,8 @@
                 </div>
             </div>
 
-            <div>
-                <a asp-action="Index">Voltar ao Início</a>
+            <div class="col text-center">
+                <a asp-action="Index" asp-controller="Logins" >Voltar ao Início</a>
             </div>
         </div>
     </div>

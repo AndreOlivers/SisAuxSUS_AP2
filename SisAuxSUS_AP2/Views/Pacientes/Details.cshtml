@@ -4,7 +4,6 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Detalhes do Paciente</h1>
 <head>
     <link rel="stylesheet" href="~/css/Login/style.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
@@ -32,7 +31,7 @@
         </nav>
     </div>
 </header>
-
+  <h1>Detalhes do Paciente</h1>
 <div>
     <h4>Paciente</h4>
     <hr />
@@ -65,5 +64,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Dados" asp-controller="Usuarios">Voltar a lista</a>
 </div>

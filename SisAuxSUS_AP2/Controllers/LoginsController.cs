@@ -48,6 +48,12 @@ namespace SisAuxSUS_AP2.Controllers
 
             return RedirectToAction("Index", "Pacientes");
         }
+
+        public IActionResult EntrarSistema()
+        {
+            return View();
+        }
+
     }
 }
 

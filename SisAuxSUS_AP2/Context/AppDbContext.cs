@@ -9,7 +9,6 @@ namespace SisAuxSUS_AP2.Context
         {
 
         }
-
         public DbSet<Usuario> Usuarios { get; set; }
 
         public DbSet<Paciente> Pacientes { get; set; }

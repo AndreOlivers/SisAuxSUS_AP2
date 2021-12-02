@@ -161,7 +161,7 @@ namespace SisAuxSUS_AP2.Controllers
             var paciente = await _context.Pacientes.FindAsync(id);
             _context.Pacientes.Remove(paciente);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ListaPacientes));
         }
 
         private bool PacienteExists(int id)

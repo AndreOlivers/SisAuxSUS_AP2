@@ -1,10 +1,9 @@
 ﻿@model SisAuxSUS_AP2.Models.Paciente
+@using SisAuxSUS_AP2.Models.Enumeradores
 
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Editar Paciente</h1>
 
 <head>
     <link rel="stylesheet" href="~/css/Login/style.css" crossorigin="anonymous">
@@ -33,6 +32,9 @@
         </nav>
     </div>
 </header>
+
+<h1>Editar Paciente</h1>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -56,18 +58,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="TipoDeSintoma" class="control-label"></label>
-                <select asp-for="TipoDeSintoma" class="form-control"></select>
+                <select asp-for="TipoDeSintoma" asp-items="Html.GetEnumSelectList<TipoDeSintomas>()" class="form-control">Escolha os sintomas</select>
                 <span asp-validation-for="TipoDeSintoma" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Dados" asp-controller="Usuarios">Voltar a lista</a>
 </div>
 
 @section Scripts {

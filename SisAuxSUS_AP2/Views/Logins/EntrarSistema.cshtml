@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SisAuxSUS_AP2.Models.LoginVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/Login/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <div>
+        <nav class="navbar navbar-expand-xl navbar-light bg-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/css/imagens/covid_icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    SisSus
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav nav-fill w-75">
+                        <a class="nav-link active" aria-current="page" href="/Usuarios/Create">Cadastrar</a>
+                        <a class="nav-link" href="https://www.fortaleza.ce.gov.br/noticias/confira-a-programacao-da-vacinacao-contra-a-covid-19-neste-fim-de-semana-20-e-21-11">Vacinação Fortaleza</a>
+                        <a class="nav-link" href="https://vacinometro.sms.fortaleza.ce.gov.br/">Vacinômetro</a>
+                        <a class="nav-link" href="/Logins/Index">Entrar</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<body>
+    <div>
+        <p>
+            <h4>VACINAS CHEGANDO!</h4>
+            <h3> Fortaleza inicia aplicação da terceira dose da vacina contra Covid-19 na população abaixo de 60 anos neste sábado (20/11) </h3>
+
+        <p>
+            Vacinação ocorre por agendamento e seguirá a faixa etária em ordem decrescente, a partir de cinco meses da data de aplicação da segunda dose
+        </p>
+        <div>
+            <img src="~/css/Imagens/489b5a98-9e92-4f73-816a-04cbc69e510e.png" width="1000">
+        </div>
+        <br />
+            A Prefeitura de Fortaleza avança na campanha de vacinação contra a Covid-19 e amplia a aplicação da terceira dose para a população em geral. O agendamento deste público está ocorrendo em ordem decrescente de idade e, a partir deste sábado (20/11), alcança a população abaixo de 60 anos, levando em conta a data de aplicação da segunda dose - o intervalo é de cinco meses para receber a terceira dose.
+
+            A lista com os nomes dos agendados está disponível no site https://coronavirus.fortaleza.ce.gov.br. Também é possível consultar pelo site https://vacineja.sepog.fortaleza.ce.gov.br.
+
+            A aplicação da terceira dose em Fortaleza teve início no dia 8 de setembro, com o público de idosos que vivem em Instituições de Longa Permanência. Já no dia 23 de setembro, foi iniciada a aplicação em idosos a partir de 70 anos, e, no dia 3 de novembro, pessoas a partir de 60 anos começaram a receber a dose de reforço, seguindo a faixa etária em ordem decrescente a partir de seis meses da data de aplicação da segunda dose.
+
+            A decisão de aplicar a terceira dose foi determinada pelo Ministério da Saúde. De acordo com o órgão, todos os indivíduos acima de 18 anos que receberam duas doses há cinco meses deverão receber o reforço. No caso dos imunossuprimidos, a dose adicional é com prazo de 28 dias após a segunda dose.
+        <div>
+            <b>Documentos necessários no ato da vacinação</b>
+            <p>Ao comparecer ao centro de vacinação, é necessário apresentar documento de identidade com foto, CPF, Cartão Nacional de Saúde (CNS), comprovante de residência e cartão de vacinação.</p>
+        </div>
+        <div>
+            <b>Dose única da marca Janssen</b>
+            <p>
+                Para o público que recebeu a dose única da marca Janssen, de acordo o Ministério da Saúde, deverá ser aplicada uma segunda dose da mesma marca antes da dose de reforço. Com isso, Fortaleza aguarda o envio de novos lotes dessa marca para dar continuidade ao esquema vacinal do público contemplado.
+
+            </p>
+        </div>
+
+    </div>
+</body>
